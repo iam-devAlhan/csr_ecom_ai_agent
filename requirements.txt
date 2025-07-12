@@ -1,4 +1,7 @@
 uvicorn
 pydantic
 fastapi
-
+pyngrok
+python-multipart
+twilio
+dotenv
