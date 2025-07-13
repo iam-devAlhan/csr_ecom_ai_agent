@@ -43,6 +43,3 @@ def get_all_shopify_products():
         json.dump(cleaned_data, f, ensure_ascii=False, indent=2)
 
     print(f"{len(cleaned_data)} products saved to {path}")
-
-if __name__ == "__main__":
-    get_all_shopify_products()
