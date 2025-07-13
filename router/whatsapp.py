@@ -2,6 +2,7 @@
 from fastapi.responses import PlainTextResponse
 from fastapi import APIRouter, Form, HTTPException
 from twilio.rest import Client
+from bot import get_groq_response
 from dotenv import load_dotenv
 from os import getenv
 
@@ -19,12 +20,7 @@ wp_router = APIRouter(prefix="/whatsapp", tags=["WhatsApp Twilio API"])
 async def receive_message(Body: str = Form(...), From: str = Form(...)):
     print(f"Getting message from {From}: {Body}")
     
-    reply = ""
-    
-    if Body.lower() == "hello" or Body.lower() == "hi" or Body.lower() == "salam":
-        reply = "Hi, I am EComAgent, your Ecommerce Customer Service Agent! What would you like to offer any services! Any order placement for your Woocommerce or Shopify products 😊"
-    else:
-        reply = "You are chatting with EComAgent AI. Say hello, hi or salam :)"
+    reply = get_groq_response(Body)
     
     try:
         message = client.messages.create(
