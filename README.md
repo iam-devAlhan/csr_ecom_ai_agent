@@ -28,5 +28,5 @@ uvicorn server:app --reload
 ```
 This will start FastAPI Server and you can access the docs, maintain the API and the bot.py file and push changes to main branch
 
-# You also need to setup Twilio WhatsApp API via its Sandbox and can test the bot
-# Replace the Shopify Store name and its Admin API Key with yours and fetch all products from your Shopify Store
+You also need to setup Twilio WhatsApp API via its Sandbox and can test the bot
+Replace the Shopify Store name and its Admin API Key with yours and fetch all products from your Shopify Store
